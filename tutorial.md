@@ -135,7 +135,7 @@ Duration: 10 minutes
 * "MainActivity" implements the interface from the button fragment so it guarantees it implements the methods to change the picture, and disable/enable the buttons.
 * In each of these guaranteed methods, the main activity grabs the fragment in control of the function and calls the method associated from the fragment
 
-
+## Now you're done!
 
 
 
