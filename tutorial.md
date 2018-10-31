@@ -15,14 +15,14 @@ Prerequisites:
 ## Miscellaneous: 
 Duration: 0 - 5 minutes
 
-### Migrate to AndroidX
+### Migrate to AndroidX:
 
 * Go to `Refactor > Migrate to AndroidX...` and click on Migrate to AndroidX.
 
 ## Setting up the fragments:
 Duration: ??? minutes
 
-### Creating the fragment XML files
+### Creating the fragment XML files:
 * PartA has a picture and a button, and we want to convert each to a fragment. Think of fragments as parts of an activity that do a specific task. One fragment will handle changing the picture. The other fragment will handle the button and send the request to change the picture.
 * Make sure your project is in Android view. Navigate to `app > res > layout` and right click on layout. In the resulting menu, navigate to `new > layout resource file`.
 
@@ -60,7 +60,7 @@ Duration: ??? minutes
 
 ![fragmentPupControlXML](images/fragmentPupControlXML.jpg)
 
-### Creating the fragment java files
+### Creating the fragment java files:
 * Navigate to `app > java > wpi.[name].guicodelab` and right click. In the resulting menu, navigate to `new > java class`.
 
 ![newJavaClass](images/newJavaClass.jpg)
@@ -71,7 +71,7 @@ Duration: ??? minutes
 
 * Create another class, and name the file something like "FragmentPupPics.java". This file will control the fragment containing the picture.
 
-### Button Fragment java file
+### Button Fragment java file:
 * Open the "FragmentPupControl.java" file.
 * Add the following:
 
@@ -80,7 +80,7 @@ Duration: ??? minutes
 * The "PupControlListener" is an interface that will be used to force the MainActivity to implement the methods to change the picture and disable/enable the button.
 * The overridden onAttach() function is used to attach this fragment to its parent (MainActivity).
 
-### Picture Fragment java file
+### Picture Fragment java file:
 * Open the "FragmentPupControl.java" file.
 * Add the following:
 
