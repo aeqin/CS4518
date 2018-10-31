@@ -26,4 +26,4 @@
         * Picture is a circle
     * Added animations to picture transition
         * Old picture rolls out the right of screen
-        * New picture rolls into the center of the screen
+        * New picture rolls from left into the center of the screen
