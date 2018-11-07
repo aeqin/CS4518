@@ -16,17 +16,17 @@ Prerequisites:
 ## Miscellaneous: 
 Duration: 5 - 10 minutes
 * Go to AndroidManifest.xml and add the following:
-'''
+```
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name= "android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- This line should have been added in part1 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-'''
+```
 * This is because the program will need location data as well as the internet
 
 * Go to the build.gradle (Module: app) file and add the following:
-'''
+```
     implementation 'com.squareup.picasso:picasso:2.71828'
-'''
+```
 * This is because we will be using Picasso to quickly & easily display images given an URL
 
 ## On to Writing Code:
@@ -91,10 +91,6 @@ Duration: ??? minutes
 
 ![onClickImage](images/onClickImage.jpg)
 ![onClickImage2](images/onClickImage2.jpg)
-
-<video width="1080" height="1920" controls>
-  <source src="images/part2_features.webm" type="video/webm">
-</video>
 
 
 
