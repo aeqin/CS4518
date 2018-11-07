@@ -50,15 +50,15 @@ Duration: ??? minutes
 
 ![FlickrFetcher](images/FlickrFetcher.jpg)
 
-* There are a few differences
+* There are a few differences:
     * Our FlickrFetcher has a constructor that takes in a latitude and longitude in order to make use of our location data
-    * Most importantly, inside fetchitems() intead of using the Flickr method getRecent, we are using the method search
+    * Most importantly, inside fetchItems() instead of using the Flickr method 'flickr.photos.getrecent', we are using the method 'flickr.photos.search'
 
 ![fetchItems](images/fetchItems.jpg)
 
-* With the method search, we'll have to modify some parameters especially to include our location data (latitude and longitude)
+* With the method search, we'll have to modify some parameters in order to include our location data (latitude and longitude)
     * We also include a radius parameter (in kilometers) to make the location data return more results than an exact coordinate
-* You'll notice that GalleryItem.java from the chapter is also used in FlickrFetcher. Create it
+* You'll notice that GalleryItem.java from the chapter is also used in FlickrFetcher.
 
 ![GalleryItem](images/GalleryItem.jpg)
 
