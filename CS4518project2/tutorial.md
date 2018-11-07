@@ -56,7 +56,7 @@ Duration: ??? minutes
 
 ![fetchItems](images/fetchItems.jpg)
 
-* With the method search, we'll have to modify some parameters in order to include our location data (latitude and longitude)
+* With the method 'flickr.photos.search', we'll have to modify some parameters in order to include our location data (latitude and longitude)
     * We also include a radius parameter (in kilometers) to make the location data return more results than an exact coordinate
 * You'll notice that GalleryItem.java from the chapter is also used in FlickrFetcher.
 
@@ -74,7 +74,7 @@ Duration: ??? minutes
     * Setting a global list of GalleryItem (mItems in my case) in the OnPostExecute() method
     * And finally utilizing Picasso in a for loop to iterate through the list of GalleryItems and setting ImageViews in the application
     
-### Congratulations, You've Completed the Main Tutorial
+### Congratulations, You've Completed the Main Tutorial!
 
 * If you want to be extra, you can add a onClick() method to any imageView thumbnails you set in your application, that expand their image into the picture your camera took while shrinking camera image down into the thumbnail that was initially clicked. Trust me, the swapping headaches are absolutely terrible.
 * This is what my main layout looked like:
