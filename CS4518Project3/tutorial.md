@@ -24,7 +24,7 @@ Duration: ??? minutes
     * I've created a class called FlickrImage.java that has respective getters/setters of colomn values
 * Add the QUERY_ID_EXISTS as it will be used as a SQL command in order to check whether or not an image object (FlickrImage) already exists in the database
 
-''' java
+``` java
     
       private static final String SQL_CREATE_ENTRIES =
          "CREATE TABLE " + LogEntry.TABLE_NAME +
@@ -39,7 +39,7 @@ Duration: ??? minutes
       public static final String QUERY_PICS = "SELECT " + "*" + " FROM " + TABLE_NAME;
 
       public static final String QUERY_ID_EXISTS = "SELECT " +  COLUMN_NAME_ID + " FROM " + TABLE_NAME + " WHERE "  + COLUMN_NAME_ID + " = ";
-'''
+```
 
 * Also add the following method getUpdateOrderSQL in order to update the database (the picture's order position) from the main application:
 
