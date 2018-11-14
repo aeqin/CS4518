@@ -21,7 +21,7 @@ Duration: ??? minutes
 * Go to LogContract.java
 * Update SQL_CREATE_ENTRIES so that the created database has space to hold a picture's URL and order
 * Add a new variable QUERY_PICS as it will be used as a SQL command in order to grab all the rows (image objects) in the database
-    * I've created a class called FlickrImage.java that has respective getters/setters of colomn values
+    * I've created a class called FlickrImage.java that has respective getters/setters of column values
 * Add the QUERY_ID_EXISTS as it will be used as a SQL command in order to check whether or not an image object (FlickrImage) already exists in the database
 
 ``` java
