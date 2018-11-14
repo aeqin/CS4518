@@ -42,7 +42,7 @@ public static final String QUERY_ID_EXISTS = "SELECT " +  COLUMN_NAME_ID + " FRO
 
 * Also add the following method getUpdateOrderSQL in order to update the database (the picture's order position) from the main application:
 
-''' java
+``` java
 public static String getUpdateOrderSQL(String id, int order)
 {
    String update = "UPDATE " + TABLE_NAME + " SET " + COLUMN_NAME_PICORDER + " = " + order;
@@ -50,14 +50,14 @@ public static String getUpdateOrderSQL(String id, int order)
 
    return update;
 }
-'''
+```
 
 ### LogEntryDBHelper.java
 * Now it's time to update LogEntryDBHelper.java
 * We will need to add 3 methods to utilize the new functionality we put in LagContract.java
 * Add a method called doesPicIDExists to check whether or not a picture is already in the database
 
-''' java
+``` java
 public boolean doesPicIDExists(String id)
 {
    String query = LogContract.LogEntry.QUERY_ID_EXISTS + id;
@@ -71,22 +71,22 @@ public boolean doesPicIDExists(String id)
       else return false;
    }
 }
-'''
+```
 
 * Add a method called updatePicOrderByID to update a picture's order position in the database
 
-''' java
+``` java
 public void updatePicOrderByID(String id, int order)
 {
    String update = LogContract.LogEntry.getUpdateOrderSQL(id, order);
    Log.d(TAG, "updatePicOrder() : UPDATE IS - " + update);
    this.getWritableDatabase().execSQL(update);
 }
-'''
+```
 
 * Add a method called getPics return all the image objects (FlickrImage) in the database
 
-''' java
+``` java
 public List<FlickrImage> getPics()
 {
    List<FlickrImage> pics = new ArrayList<FlickrImage>();
@@ -116,12 +116,12 @@ public List<FlickrImage> getPics()
 
    return pics;
 }
-'''
+```
 
 ### MainActivity.java
 * Add a method called putFlickrImageToDB that takes an image object (FlickrImage) and puts its data as a row into the database you've declared (as db in my case)
 
-''' java
+``` java
 private void putFlickrImageToDB(FlickrImage img)
 {
    if(db.doesPicIDExists(img.getId()) == true) return; // Don't add row to database if URL of picture already exists
@@ -134,27 +134,27 @@ private void putFlickrImageToDB(FlickrImage img)
 
    db.getWritableDatabase().insert(LogContract.LogEntry.TABLE_NAME, null, cv);
 }
-'''
+```
 
 * Whenever you create an image object (FlickrImage) in your code, call putFlickrImageToDB to ensure that the database remembers all the pictures in your application
 
-''' java
+``` java
 // Add images to database
 putFlickrImageToDB(mFlickrImages.get(i));
-'''
+```
 
 * Add calls to the updatePicOrderByID method of LogEntryDBHelper whereever in your code that you're swapping picture order around
     * In my case, mFlickrImages hold a list of image objects (FlickrImage) and mImageViewPos holds the current picture in each position, which may reflect whatever you're trying to do to hold/swap pictures on the screen
 
-''' java
+``` java
 // Update picture order in database
 db.updatePicOrderByID(mFlickrImages.get(mImageViewPos.get(0)).getId(), 0);
 db.updatePicOrderByID(mFlickrImages.get(mImageViewPos.get(iv_index)).getId(), iv_index);
-'''
+```
 
 * Finally add a SharedPreference that remembers whether or not the pictures have been ordered (and therefore need to be extracted from the database and displayed again) the last time the app was open
 
-'''java
+``` java
 final String PREFS_NAME = "Preferences";
 
 // ...
@@ -169,7 +169,7 @@ if (settings.getBoolean("orderedAlready", false) == true) // Pics have been orde
 // ...
 settings.edit().putBoolean("orderedAlready", true).apply(); // Put this statement somewhere after your pictures have been ordered
 // ...
-'''
+```
     
 ### Congratulations, You've Completed the Tutorial!
 
